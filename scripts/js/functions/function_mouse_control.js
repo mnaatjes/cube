@@ -3,12 +3,25 @@
 //-------------------------------------------------------------------------------------------------------
 /*------------------------------------------------------*/
 /***
- * @name MouseEvent
+ * @name cubeClick
  * @type {function}
  */
 /*------------------------------------------------------*/
-function MouseEvent(e){
-    console.log(e);
+function cubeCick(e){
+    e.target.addEventListener('mousemove', (e) => cubeMove(e));
+
+}
+/*------------------------------------------------------*/
+/***
+ * @name cubeMove
+ * @type {function}
+ */
+/*------------------------------------------------------*/
+function cubeMove(e){
+    console.log(`(X: ${e.clientX}, Y: ${e.clientY}`);
 }
 
-let test = document.getElementById('test');
+const test = document.getElementById('test');
+
+test.addEventListener('mousedown', (e) => cubeCick(e));
+test.removeEventListener('mouseup', (e) => cubeCick(e));
