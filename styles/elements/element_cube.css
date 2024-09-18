@@ -11,14 +11,10 @@ div[class^="cube__container"] {
     --cube-root: 1.26rem;
     --cube-cubed: 8rem;
     /*POSITION*/
-    padding-right: 24px;
-    width: 100%;
-    height: 100%;
-    /*DISPLAY*/
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
+    margin-left: auto;
+    margin-right: 24px;
+    width: var(--cube-size);
+    height: var(--cube-size);
     /*TRANSFORM*/
     perspective: 500px;
     /*DEBUG*/
@@ -64,7 +60,7 @@ div[class^="cube__container"][class$="--cubed"] {
     width: var(--cube-size);
     height: var(--cube-size);
     /*ANIMATION*/
-    animation: tumble 4.95s linear 0s infinite forwards normal;
+    animation: tumble 8.95s linear 0s infinite forwards normal;
     /*TRANSFORM*/
     transform-style: preserve-3d;
     transform: rotate3d(1, 1, 0, 45deg);
