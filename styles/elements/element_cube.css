@@ -5,15 +5,147 @@
 /*--------------------------------*/
 /* Cube - Container */
 /*--------------------------------*/
-.cube__container {}
+div[class^="cube__container"] {
+    /*VARS*/
+    --cube-number: 2.00rem;
+    --cube-root: 1.26rem;
+    --cube-cubed: 8rem;
+    /*POSITION*/
+    padding-right: 24px;
+    width: 100%;
+    height: 100%;
+    /*DISPLAY*/
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    /*TRANSFORM*/
+    perspective: 500px;
+    /*DEBUG*/
+    border: 1px solid red;
+}
+/*--------------------------------*/
+/* Cube - Container(Root) */
+/*--------------------------------*/
+div[class^="cube__container"][class$="--root"] {
+    /*VARS*/
+    --cube-size: var(--cube-root);
+    --color-face-bkrnd: var(--color-rootContainer);
+    --color-face-border: 2px solid var(--color-rootStroke);
+    --cube-font-size: 6px;
+}
+/*--------------------------------*/
+/* Cube - Container(Number) */
+/*--------------------------------*/
+div[class^="cube__container"][class$="--number"] {
+    /*VARS*/
+    --cube-size: var(--cube-number);
+    --color-face-bkrnd: var(--color-numberContainer);
+    --color-face-border: 2px solid var(--color-numberStroke);
+    --cube-font-size: 10px;
+}
+/*--------------------------------*/
+/* Cube - Container(Cubed) */
+/*--------------------------------*/
+div[class^="cube__container"][class$="--cubed"] {
+    /*VARS*/
+    --cube-size: var(--cube-cubed);
+    --color-face-bkrnd: var(--color-cubeContainer);
+    --color-face-border: 2px solid var(--color-cubeStroke);
+    --cube-font-size: 16px;
+}
 /*--------------------------------*/
 /* Cube */
 /*--------------------------------*/
-.cube {}
+.cube {
+    /*VARS*/
+    /*POSITION*/
+    position: relative;
+    width: var(--cube-size);
+    height: var(--cube-size);
+    /*ANIMATION*/
+    animation: tumble 4.95s linear 0s infinite forwards normal;
+    /*TRANSFORM*/
+    transform-style: preserve-3d;
+    transform: rotate3d(1, 1, 0, 45deg);
+    /*DEBUGGING*/
+}
+/*--------------------------------*/
+/* Cube: Animation */
+/*--------------------------------*/
+@keyframes tumble {
+    0% {transform: rotate3d(0, 0, 0, 0deg);}
+    100% {transform: rotate3d(1, 1, 0, 360deg);}
+}
 /*--------------------------------*/
 /* Cube - Face */
 /*--------------------------------*/
-.cube__face {}
+div[class^="cube__face"] {
+    /*VARS*/
+    /*POSITION*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: var(--cube-size);
+    height: var(--cube-size);
+    /*DISPLAY*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*BACKGROUND*/
+    background: var(--color-face-bkrnd);
+    /*BORDER*/
+    border: var(--color-face-border);
+    /*TEXT*/
+    font-size: var(--cube-font-size);
+    font-weight: 600;
+    /*SHADOW*/
+    /*box-shadow: 0 0 6px 0px var(--color-number);*/
+    /*TRANSFORM*/
+    opacity: 0.5;
+}
+/*--------------------------------*/
+/* Cube - Face: Front */
+/*--------------------------------*/
+div[class^="cube__face"][class$="--front"] {
+    /*TRANSFORM*/
+    transform: translateZ(calc(var(--cube-size)/2));
+}
+/*--------------------------------*/
+/* Cube - Face: Back */
+/*--------------------------------*/
+div[class^="cube__face"][class$="--back"] {
+    /*TRANSFORM*/
+    transform: translateZ(calc(var(--cube-size)/-2)) rotateY(180deg);
+}
+/*--------------------------------*/
+/* Cube - Face: Right */
+/*--------------------------------*/
+div[class^="cube__face"][class$="--right"] {
+    /*TRANSFORM*/
+    transform: translateX(calc(var(--cube-size)/-2)) rotateY(-90deg);
+}
+/*--------------------------------*/
+/* Cube - Face: Left */
+/*--------------------------------*/
+div[class^="cube__face"][class$="--left"] {
+    /*TRANSFORM*/
+    transform: translateX(calc(var(--cube-size)/2)) rotateY(90deg);
+}
+/*--------------------------------*/
+/* Cube - Face: Top */
+/*--------------------------------*/
+div[class^="cube__face"][class$="--top"] {
+    /*TRANSFORM*/
+    transform: translateY(calc(var(--cube-size)/-2)) rotateX(90deg);
+}
+/*--------------------------------*/
+/* Cube - Face: Bottom */
+/*--------------------------------*/
+div[class^="cube__face"][class$="--btm"] {
+    /*TRANSFORM*/
+    transform: translateY(calc(var(--cube-size)/2)) rotateX(-90deg);
+}
 /*--------------------------------*/
 /* Template */
 /*--------------------------------*/

@@ -76,26 +76,28 @@ aside {
 main {
     /*GRID*/
     grid-row: 3;
+    /*POSITION*/
+    padding: 0 12px;
     /*DISPLAY*/
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(3, 1fr) auto;
+    grid-template-rows: 1fr 3fr 9fr auto;
     /*BORDER*/
     border-radius: 8px;
     border: 1px solid var(--color-strokeDim);
     /*DEBUGGING*/
 }
-main > * {border: 1px solid red;}
+/*main > * {border: 1px solid red;}*/
 /*--------------------------------*/
 /* Main - Section: All */
 /*--------------------------------*/
 main section {grid-column: 1;}
 main section:not(:last-child) {
     /*GRID*/
-    align-self: center;
     /*DISPLAY*/
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
 main section:not(:last-child):nth-of-type(1) {flex: 1;}
 main section:not(:last-child):nth-of-type(2) {flex: 3;}
