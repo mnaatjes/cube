@@ -12,16 +12,29 @@
 /* CIS 170: Semantic | Main: */
 /*---------------------------------------------------------------*/
 /*--------------------------------*/
+/* Semantic: All */
+/*--------------------------------*/
+nav,
+header,
+main,
+footer {
+    /*GRID*/
+    grid-column: 1;
+}
+/*--------------------------------*/
 /* Header: Nav */
 /*--------------------------------*/
 nav {
     /*GRID*/
-    /*FLEX*/
-    /*VARS*/
-    /*POSITION*/
+    grid-row: 1;
     /*DISPLAY*/
     /*BACKGROUND*/
     /*BORDER*/
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-left: 1px solid var(--color-strokeDim);
+    border-right: 1px solid var(--color-strokeDim);
+    border-bottom: 1px solid var(--color-strokeDim);
     /*TEXT*/
     /*SHADOW*/
     /*TRANSITION*/
@@ -34,17 +47,9 @@ nav {
 /*--------------------------------*/
 header {
     /*GRID*/
-    /*FLEX*/
-    /*VARS*/
-    /*POSITION*/
-    /*DISPLAY*/
-    /*BACKGROUND*/
-    /*BORDER*/
-    /*TEXT*/
-    /*SHADOW*/
-    /*TRANSITION*/
-    /*ANIMATION*/
-    /*TRANSFORM*/
+    grid-row: 2;
+    justify-self: center;
+    align-self: center;
     /*DEBUGGING*/
 }
 /*--------------------------------*/
@@ -70,35 +75,47 @@ aside {
 /*--------------------------------*/
 main {
     /*GRID*/
-    /*FLEX*/
-    /*VARS*/
-    /*POSITION*/
+    grid-row: 3;
     /*DISPLAY*/
-    /*BACKGROUND*/
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr) auto;
     /*BORDER*/
-    /*TEXT*/
-    /*SHADOW*/
-    /*TRANSITION*/
-    /*ANIMATION*/
-    /*TRANSFORM*/
+    border-radius: 8px;
+    border: 1px solid var(--color-strokeDim);
     /*DEBUGGING*/
+}
+main > * {border: 1px solid red;}
+/*--------------------------------*/
+/* Main - Section: All */
+/*--------------------------------*/
+main section {grid-column: 1;}
+main section:not(:last-child) {
+    /*GRID*/
+    align-self: center;
+    /*DISPLAY*/
+    display: flex;
+    flex-direction: row;
+}
+main section:not(:last-child):nth-of-type(1) {flex: 1;}
+main section:not(:last-child):nth-of-type(2) {flex: 3;}
+/*--------------------------------*/
+/* Main - Section */
+/*--------------------------------*/
+main section:last-child {
+    /*GRID*/
+    grid-row: 4;
+    justify-self: center;
 }
 /*--------------------------------*/
 /* Footer */
 /*--------------------------------*/
 footer {
     /*GRID*/
-    /*FLEX*/
-    /*VARS*/
-    /*POSITION*/
-    /*DISPLAY*/
-    /*BACKGROUND*/
-    /*BORDER*/
+    grid-row: 4;
+    justify-self: center;
     /*TEXT*/
-    /*SHADOW*/
-    /*TRANSITION*/
-    /*ANIMATION*/
-    /*TRANSFORM*/
+    color: var(--color-strokeDim);
     /*DEBUGGING*/
 }
 /*--------------------------------*/

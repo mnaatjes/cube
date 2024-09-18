@@ -2,9 +2,17 @@
 /* CIS 170: Main */
 /*---------------------------------------------------------------*/
 /*--------------------------------*/
-/* Imports: */
+/* Imports: Semantic */
 /*--------------------------------*/
 @import url(semantic/semantic.css);
+/*--------------------------------*/
+/* Imports: Resets */
+/*--------------------------------*/
+@import url(resets/reset.button.css);
+/*--------------------------------*/
+/* Imports: Elements */
+/*--------------------------------*/
+@import url(elements/element_cube.css);
 /*--------------------------------*/
 /* Media Queries */
 /*--------------------------------*/
@@ -21,15 +29,26 @@
     --debug-border: 1px solid red;
     --debug-bkrnd: rgba(255, 0, 0, 0.4);
     --debug-test-var: 100%;
+    
     /*UI*/
     --ui-font-family: Arial, Helvetica, sans-serif;
     --ui-padding: 10px;
     --ui-border-radius: 10px;
-    --ui-grid-gap: 0px;
+    --ui-grid-gap: 12px;
 
-    /*BACKGROUND*/
-    --bkrnd-body: white;
-    --bkrnd-grid: white;
+    /*COLORS*/
+    --color-background: #f9f7f3;
+    --color-stroke: #3e3e3e;
+    --color-strokeDim: #7f7f7f;
+    --color-number: #843fa1;
+    --color-numberStroke: #371D06;
+    --color-numberContainer: #d5b6e2;
+    --color-cube: #e67e23;
+    --color-cubeStroke: #371D06;
+    --color-cubeContainer: #F1B47E;
+    --color-root: #008080;
+    --color-rootStroke: #003D3D;
+    --color-rootContainer: #ADFFFF;
 
     /*SHADOW*/
     --ui-shadow-off: 2px 2px 12px 6px rgba(0, 0, 0, 0.0);
@@ -55,29 +74,32 @@
 /*--------------------------------*/
 body {
     /*POSITION*/
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
+    width: 100%;
+    height: 100vh;
     /*BACKGROUND*/
-    background: var(--bkrnd-body);
+    background: var(--color-background);
     /*TEXT*/
     font-family: var(--ui-font-family);
+    color: var(--color-stroke);
 }
 /*--------------------------------*/
 /* Grid Container */
 /*--------------------------------*/        
 .grid {
     /*POSITION*/
+    padding: 0 24px;
     /*DISPLAY*/
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto auto auto;
+    justify-content: center;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(2, 60px) calc(100% - 150px - (3*var(--ui-grid-gap))) 30px;
     grid-gap: var(--ui-grid-gap);
-    /*BACKGROUND*/
-    background: var(--bkrnd-grid);
     /*DEBUGGING*/
-    /*border: var(--debug-border);*/
+    border: var(--debug-border);
 }
-.grid > * {border: var(--debug-border);}
+/*.grid > * {border: var(--debug-border);}*/
 /*--------------------------------*/
 /* Flex Container */
 /*--------------------------------*/
