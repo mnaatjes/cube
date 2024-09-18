@@ -10,3 +10,5 @@
 function MouseEvent(e){
     console.log(e);
 }
+
+let test = document.getElementById('test');
