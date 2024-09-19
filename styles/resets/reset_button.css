@@ -8,19 +8,14 @@ button {
     /*RESET*/
     outline: none;
     border: none;
-    /*POSITION*/
-    /*DISPLAY*/
+    cursor: pointer;
     /*BACKGROUND*/
     background-color: var(--color-background);
-    /*BORDER*/
     /*TEXT*/
     font-weight: 500;
     color: var(--color-stroke);
-    /*SHADOW*/
     /*TRANSITION*/
-    /*ANIMATION*/
-    /*TRANSFORM*/
-    /*DEBUGGING*/
+    transition: var(--ui-transition);
 }
 /*--------------------------------*/
 /* Button - Action */
@@ -28,8 +23,6 @@ button {
 button[class$="--action"] {
     /*POSITION*/
     padding: 6px 18px;
-    /*DISPLAY*/
-    /*BACKGROUND*/
     /*BORDER*/
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
@@ -38,10 +31,29 @@ button[class$="--action"] {
     border-top: 1px solid var(--color-strokeDim);
     /*TEXT*/
     font-size: 18px;
+    /*DEBUGGING*/
+}
+/*--------------------------------*/
+/* Button - Action(Hover) */
+/*--------------------------------*/
+button[class$="--action"]:hover {
+    /*BACKGROUND*/
+    background: var(--color-strokeDim);
+    /*TEXT*/
+    color: var(--color-background);
     /*SHADOW*/
-    /*TRANSITION*/
-    /*ANIMATION*/
+    box-shadow: 0 8px 0 0 var(--color-stroke);
     /*TRANSFORM*/
+    transform: translateY(-8px);
+    /*DEBUGGING*/
+}
+/*--------------------------------*/
+/* Button - Action(Active) */
+/*--------------------------------*/
+button[class$="--action"]:active {
+    box-shadow: 0 0px 0 0 var(--color-stroke);
+    /*TRANSFORM*/
+    transform: translateY(0px);
     /*DEBUGGING*/
 }
 /*--------------------------------*/

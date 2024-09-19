@@ -8,7 +8,7 @@
 /*--------------------------------*/
 /* Imports: Resets */
 /*--------------------------------*/
-@import url(resets/reset.button.css);
+@import url(resets/reset_button.css);
 /*--------------------------------*/
 /* Imports: Elements */
 /*--------------------------------*/
@@ -16,12 +16,7 @@
 /*--------------------------------*/
 /* Media Queries */
 /*--------------------------------*/
-@import url(media_queries/media_queries__main_sm.css) screen and (min-width:500px) and (max-width:1200px);
-/*
-@import url(media_queries/media_queries__main_lg.css) screen and (min-width:1200px);
-@import url(media_queries/media_queries__main_md.css) screen and (min-width:700px) and (max-width:1200px);
-
-*/
+@import url(media_queries/media_query_sm.css) screen and (min-width:500px) and (max-width:1200px);
 /*--------------------------------*/
 /* Root */
 /*--------------------------------*/ 
@@ -98,7 +93,7 @@ body {
     grid-template-rows: repeat(2, 60px) calc(100% - 150px - (3*var(--ui-grid-gap))) 30px;
     grid-gap: var(--ui-grid-gap);
     /*DEBUGGING*/
-    border: var(--debug-border);
+    /*border: var(--debug-border);*/
 }
 /*.grid > * {border: var(--debug-border);}*/
 /*--------------------------------*/
