@@ -61,10 +61,11 @@ div[class^="cube__container"][class$="--cubed"] {
     width: var(--cube-size);
     height: var(--cube-size);
     /*ANIMATION*/
-    animation: tumble 8.95s linear 0s infinite forwards normal;
+    /*animation: tumble 8.95s linear 0s infinite forwards normal;*/
     /*TRANSFORM*/
     transform-style: preserve-3d;
-    transform: rotate3d(1, 1, 0, 45deg);
+    transform-origin: center;
+    transform: rotate3d(var(--rotateX), var(--rotateY), var(--rotateZ), 45deg);
     /*DEBUGGING*/
 }
 /*--------------------------------*/

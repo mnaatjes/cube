@@ -3,25 +3,40 @@
 //-------------------------------------------------------------------------------------------------------
 /*------------------------------------------------------*/
 /***
- * @name cubeClick
+ * @name onCubeMove
  * @type {function}
  */
 /*------------------------------------------------------*/
-function cubeCick(e){
-    e.target.addEventListener('mousemove', (e) => cubeMove(e));
-
+function onCubeMove(e){
+    moveAt(e.pageX, e.pageY);
 }
 /*------------------------------------------------------*/
 /***
- * @name cubeMove
+ * @name moveAt
  * @type {function}
  */
 /*------------------------------------------------------*/
-function cubeMove(e){
-    console.log(`(X: ${e.clientX}, Y: ${e.clientY}`);
+function moveAt(pageX, pageY){
+    console.log(`(X: ${pageX}, Y: ${pageY}`);
+    const root  = document.querySelector(':root');
+    const style = getComputedStyle(root);
+    // set X
+    root.style.setProperty('--rotateX', (pageX-600));
+    root.style.setProperty('--rotateY', (pageY-600));
 }
 
-const test = document.getElementById('test');
 
-test.addEventListener('mousedown', (e) => cubeCick(e));
-test.removeEventListener('mouseup', (e) => cubeCick(e));
+//console.log(`(X: ${e.clientX}, Y: ${e.clientY}`);
+//test.addEventListener('mousedown', (e) => cubeClick(e));
+const test = document.getElementById('test');
+test.onmousedown = function(e){
+    // get pageX, Y
+    moveAt(e.pageX, e.pageY);
+    // document --> start event
+    document.addEventListener('mousemove', onCubeMove);
+    // document --> end event
+    test.onmouseup = function(){
+        document.removeEventListener('mousemove', onCubeMove);
+        test.onmouseup = null;
+    }
+};
