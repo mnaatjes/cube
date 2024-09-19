@@ -11,9 +11,10 @@ div[class^="cube__container"] {
     --cube-root: 1.26rem;
     --cube-cubed: 8rem;
     /*POSITION*/
-    padding-right: 24px;
-    width: 100%;
-    height: 100%;
+    margin-left: auto;
+    margin-right: 24px;
+    width: var(--cube-size);
+    height: var(--cube-size);
     /*DISPLAY*/
     display: flex;
     flex-direction: row;
@@ -21,8 +22,6 @@ div[class^="cube__container"] {
     align-items: center;
     /*TRANSFORM*/
     perspective: 500px;
-    /*DEBUG*/
-    border: 1px solid red;
 }
 /*--------------------------------*/
 /* Cube - Container(Root) */

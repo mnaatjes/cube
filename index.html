@@ -16,7 +16,7 @@
             <h1>Cube Root</h1>
         </header>
         <main>
-            <section>
+            <section id="root">
                 <h4 style="color: var(--color-root);">Root:</h4>
                 <div class="cube__container--root">
                     <div class="cube">
@@ -29,7 +29,7 @@
                     </div>
                 </div>
             </section>
-            <section>
+            <section id="number">
                 <h4 style="color: var(--color-number);">Original:</h4>
                 <div class="cube__container--number">
                     <div class="cube">
@@ -42,7 +42,7 @@
                     </div>
                 </div>
             </section>
-            <section>
+            <section id="cubed">
                 <h4 style="color: var(--color-cube);">Cubed:</h4>
                 <div class="cube__container--cubed">
                     <div class="cube">
@@ -56,7 +56,7 @@
                 </div>
             </section>
             <section>
-                <button type="button" class="--action">Enter Number</button>
+                <button type="button" class="--action" onclick="promptNumber()">Enter Number</button>
             </section>
         </main>
         <footer>
