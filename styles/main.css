@@ -57,6 +57,11 @@
     /*TRANSITIONS*/
     --ui-transition: all 0.95s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
+    /*CUBE ROTATION*/
+    --rotateX: 2;
+    --rotateY: 4;
+    --rotateZ: 1;
+
     /*SEMANTIC*/
 }
 /*--------------------------------*/
